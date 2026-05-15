@@ -18,7 +18,7 @@ const courseSets = [
     lessonTitle: "第1课",
     word: "Blume", 
     ipa: "[ˈbluːmə]", 
-    meta: "阴性名词 die Blume, -n", 
+    meta: "阴性名词 die Blume", 
     meaning: "花、鲜花\n(eine Pflanze mit bunten Blüten)",
     exampleDe: "Ich schenke meiner Mutter eine Blume zum Geburtstag.",
     exampleCn: "生日那天我送给妈妈一朵花。",
@@ -30,7 +30,7 @@ const courseSets = [
     lessonTitle: "第2课",
     word: "Vogel", 
     ipa: "[ˈfoːɡl̩]", 
-    meta: "阳性名词 der Vogel, Vögel", 
+    meta: "阳性名词 der Vogel", 
     meaning: "鸟、飞禽\n(ein Tier mit Federn und Flügeln)",
     exampleDe: "Der Vogel sitzt auf dem Baum und singt.",
     exampleCn: "那只鸟坐在树上唱歌。",
@@ -42,7 +42,7 @@ const courseSets = [
     lessonTitle: "第3课",
     word: "Tisch", 
     ipa: "[tɪʃ]", 
-    meta: "阳性名词 der Tisch, -e", 
+    meta: "阳性名词 der Tisch", 
     meaning: "桌子\n(ein Möbelstück mit einer Platte und Beinen)",
     exampleDe: "Das Essen steht schon auf dem Tisch.",
     exampleCn: "饭菜已经摆在桌子上了。",
@@ -54,7 +54,7 @@ const courseSets = [
     lessonTitle: "第4课",
     word: "Stuhl", 
     ipa: "[ʃtuːl]", 
-    meta: "阳性名词 der Stuhl, Stühle", 
+    meta: "阳性名词 der Stuhl", 
     meaning: "椅子\n(ein Möbelstück für eine Person zum Sitzen)",
     exampleDe: "Nehmen Sie bitte Platz! Hier ist ein Stuhl.",
     exampleCn: "请坐！这里有一把椅子。",
@@ -66,7 +66,7 @@ const courseSets = [
     lessonTitle: "第5课",
     word: "Wurst", 
     ipa: "[vʊrst]", 
-    meta: "阴性名词 die Wurst, Würste", 
+    meta: "阴性名词 die Wurst", 
     meaning: "香肠\n(ein Lebensmittel aus zerkleinertem Fleisch)",
     exampleDe: "Möchtest du eine Bratwurst mit Senf essen?",
     exampleCn: "你想吃一根配芥末酱的烤肠吗？",
@@ -78,7 +78,7 @@ const courseSets = [
     lessonTitle: "第6课",
     word: "Gabel", 
     ipa: "[ˈɡaːbl̩]", 
-    meta: "阴性名词 die Gabel, -n", 
+    meta: "阴性名词 die Gabel", 
     meaning: "叉子\n(ein Essbesteck mit Zacken)",
     exampleDe: "Ich kann nicht mit Stäbchen essen, ich brauche eine Gabel.",
     exampleCn: "我不会用筷子，我需要一把叉子。",
@@ -212,9 +212,17 @@ export default function App() {
                     <section className="space-y-4 pt-4 border-t border-slate-100 shrink-0">
                       <div className="space-y-2">
                         <p className="text-[9px] uppercase tracking-[0.4em] text-slate-300 font-black">Contextual Example / 典型语境</p>
-                        <p className="text-3xl md:text-4xl font-serif italic text-slate-800 leading-tight tracking-tight">
-                          "{activeLesson.exampleDe}"
-                        </p>
+                        <div className="flex items-start gap-4">
+                          <p className="text-3xl md:text-4xl font-serif italic text-slate-800 leading-tight tracking-tight flex-1">
+                            "{activeLesson.exampleDe}"
+                          </p>
+                          <button 
+                            onClick={() => playAudio(activeLesson.exampleDe)}
+                            className="mt-2 text-slate-300 hover:text-blue-400 transition-colors shrink-0 cursor-pointer"
+                          >
+                            <Volume2 size={24} />
+                          </button>
+                        </div>
                         <p className="text-xl md:text-2xl text-slate-400 font-light underline decoration-slate-100 underline-offset-4">
                           {activeLesson.exampleCn}
                         </p>
