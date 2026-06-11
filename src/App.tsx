@@ -10,7 +10,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { BookOpen, Headphones, MessageCircle, PenTool, PlayCircle, Star, ArrowLeft, Volume2 } from "lucide-react";
+import { BookOpen, Headphones, MessageCircle, PenTool, PlayCircle, Star, ArrowLeft, Volume2, Coffee, Utensils } from "lucide-react";
 
 const courseSets = [
   { 
@@ -56,7 +56,7 @@ const courseSets = [
     ipa: "[ʃtuːl]", 
     meta: "阳性名词 der Stuhl", 
     meaning: "椅子\n(ein Möbelstück für eine Person zum Sitzen)",
-    exampleDe: "Nehmen Sie bitte Platz! Hier ist ein Stuhl.",
+    exampleDe: "Nehmen Sie bitte Platz! Hier is ein Stuhl.",
     exampleCn: "请坐！这里有一把椅子。",
     icon: PenTool, 
     color: "text-orange-500" 
@@ -84,6 +84,30 @@ const courseSets = [
     exampleCn: "我不会用筷子，我需要一把叉子。",
     icon: Star, 
     color: "text-yellow-500" 
+  },
+  { 
+    id: 7, 
+    lessonTitle: "第7课",
+    word: "Tasse", 
+    ipa: "[ˈtasə]", 
+    meta: "阴性名词 die Tasse", 
+    meaning: "杯子 / 咖啡杯\n(ein kleines Gefäß für heiße Getränke)",
+    exampleDe: "Ich trinke jeden Morgen eine Tasse Kaffee.",
+    exampleCn: "我每天早上喝一杯咖啡。",
+    icon: Coffee, 
+    color: "text-amber-500" 
+  },
+  { 
+    id: 8, 
+    lessonTitle: "第8课",
+    word: "Löffel", 
+    ipa: "[ˈlœfl̩]", 
+    meta: "阳性名词 der Löffel", 
+    meaning: "勺子\n(ein Essbesteck zum Essen von Suppe)",
+    exampleDe: "Ich esse die Suppe mit einem Löffel.",
+    exampleCn: "我用勺子喝汤。",
+    icon: Utensils, 
+    color: "text-emerald-500" 
   },
 ];
 
@@ -123,7 +147,7 @@ export default function App() {
 
             {/* Main Interaction Area */}
             <main className="flex-1 px-12 pb-10 overflow-hidden">
-              <div className="grid grid-cols-2 grid-rows-3 gap-6 w-full h-full">
+              <div className="grid grid-cols-2 grid-rows-4 gap-4 w-full h-full">
                 {courseSets.map((set, index) => (
                   <motion.button
                     key={set.id}
